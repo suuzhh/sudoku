@@ -1,5 +1,5 @@
 # SUDOKU #
-a sudoku game by javascrip
+a sudoku game by javascript
 
 ## start
 > wait...
