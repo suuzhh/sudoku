@@ -30,18 +30,22 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css/,
+                test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            {
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js', '.css']
+        extensions: ['.ts', '.js', '.css', '.scss']
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            title: 'Production',
+            title: 'sudoku',
             chunks: ['app'], // 制定该 html应用哪些入口点文件
             template: './template.html',
             minify: {

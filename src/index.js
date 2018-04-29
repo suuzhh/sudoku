@@ -1,11 +1,13 @@
 import { cube } from './script/math'
 import tto from './tto'
 
+import './scss/test.scss'
 import './style/style.css'
 
 
 function component() {
     var element = document.createElement('div')
+    element.classList.add('test')
     
     element.innerHTML = [
         'Hello webpack',
