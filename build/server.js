@@ -10,10 +10,12 @@ const compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
     quiet: true,
-    noInfo: true
+    logLevel: 'warn'
 }))
 
-app.use(webpackHotMiddleware(compiler))
+app.use(webpackHotMiddleware(compiler, {
+    log: false
+}))
 
 app.listen(3000, function() {
     console.log('Server is running on port 3000!\n')
