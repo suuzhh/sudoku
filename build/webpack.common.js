@@ -8,7 +8,7 @@ function resolve(dir) {
 
 module.exports = {
     entry: {
-        app: ['webpack-hot-middleware/client?reload=true', './src/index.js'],
+        app: ['webpack-hot-middleware/client?reload=true', 'babel-polyfill', './src/index.js'],
         // another: ['./src/another.js']
     },
     output: {
