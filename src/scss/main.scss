@@ -1,3 +1,6 @@
+$shadowBottom: 0 0.2rem 0.3rem rgba(48, 48, 48, 192);
+$shadowTop: 0 -0.1rem 0.2rem rgba(48,48,48,192);
+
 html {
     font-size: 14px;
 }
@@ -16,11 +19,39 @@ body {
 }
 
 .title {
-    h1 {
-        
-    }
+    padding: 1rem 5%;
+    background: steelblue;
+    color: #fff;
+    box-shadow: $shadowBottom;
+    margin-bottom: 2rem;
 }
 
 .hidden {
     display: none;
+}
+
+.dashboard {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: steelblue;
+    color: #fff;
+    box-sizing: border-box;
+    box-shadow: $shadowTop;
+    height: 3rem;
+
+    button {
+        float: left;
+        width: 25%;
+        height: 3rem;
+        font-size: 1.3rem;
+        color: #fff;
+        border: 1px solid #ccc;
+        background: transparent;
+        border-right-width: 0;
+        &:last-child {
+            border-right-width: 1px;
+        }
+    }
 }

@@ -1,3 +1,5 @@
+import './scss/main.scss'
+
 const toolkit = require('./js/toolkit')
 const matrix = toolkit.makeMatrix()
 
