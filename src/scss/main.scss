@@ -24,6 +24,11 @@ body {
     color: #fff;
     box-shadow: $shadowBottom;
     margin-bottom: 2rem;
+    h1 {
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        font-weight: normal;
+    }
 }
 
 .container {
@@ -89,6 +94,7 @@ body {
     height: 3rem;
 
     button {
+        font-family: '微软雅黑';
         float: left;
         width: 25%;
         height: 3rem;

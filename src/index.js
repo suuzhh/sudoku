@@ -19,7 +19,6 @@ class Grid {
                 .addClass(colGroupClasses[colIndex % 3])
                 .text(cellValue)
         }))
-        console.log($cells)
 
         const $divArray = $cells.map(($spanArray, rowIndex) => {
             return $('<div>')
@@ -30,7 +29,20 @@ class Grid {
 
         this._$container.append($divArray)
     }
+
+    layout() {
+        const width = $('span:first', this._$container).width()
+
+        $('span', this._$container)
+        .height(width)
+        .css({
+            'line-height': `${width}px`,
+            'font-size': width < 32 ? `${width / 2}px `: ''
+        })
+    }
 }
 
 
-new Grid($('#container')).build()
+const grid = new Grid($('#container'))
+grid.build()
+grid.layout()
