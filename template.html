@@ -7,6 +7,19 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-    
+    <div class="title">
+        <h1>Sudoku Game</h1>
+    </div>
+    <!-- 九宫格 -->
+    <div id="container" class="container grid"></div>
+    <!-- 按钮组 -->
+    <div id="dashboard" class="dashboard">
+        <button type="button" id="check">检查</button>
+        <button type="button" id="reset">重置</button>
+        <button type="button" id="clear">清理</button>
+        <button type="button" id="rebuild">重建</button>
+    </div>
+    <!-- 弹出面板 -->
+    <div id="popupNumbers" class="grid popup-num hidden"></div>
 </body>
 </html>
