@@ -1,6 +1,6 @@
 // 生成九宫格
 import Toolkit from '../core/toolkit'
-import Generator from '../core/generator'
+import Sudoku from '../core/sudoku'
 
 export default class Grid {
     constructor(container) {
@@ -8,9 +8,9 @@ export default class Grid {
     }
 
     build() {
-        const generator = new Generator()
-        generator.generate()
-        const matrix = generator.matrix
+        const sudoku = new Sudoku()
+        sudoku.make()
+        const matrix = sudoku.puzzleMatrix
 
         // const matrix = Toolkit.matrix.makeMatrix()
 
@@ -20,6 +20,7 @@ export default class Grid {
         const $cells = matrix.map(rowValues => rowValues.map((cellValue, colIndex) => {
             return $('<span>')
                 .addClass(colGroupClasses[colIndex % 3])
+                .addClass(cellValue ? 'fixed' : 'empty')
                 .text(cellValue)
         }))
 

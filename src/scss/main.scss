@@ -57,6 +57,14 @@ body {
             &:last-child {
                 border-right-width: 2px;
             }
+
+            &.empty {
+                color: #fff;
+            }
+
+            &.fixed {
+                background: #eee;
+            }
         }
 
         &.row_g_bottom {
