@@ -1,5 +1,6 @@
 // 生成九宫格
 import Toolkit from '../core/toolkit'
+import Generator from '../core/generator'
 
 export default class Grid {
     constructor(container) {
@@ -7,7 +8,11 @@ export default class Grid {
     }
 
     build() {
-        const matrix = Toolkit.matrix.makeMatrix()
+        const generator = new Generator()
+        generator.generate()
+        const matrix = generator.matrix
+
+        // const matrix = Toolkit.matrix.makeMatrix()
 
         const rowGroupClasses = ['row_g_top', 'row_g_middle', 'row_g_bottom']
         const colGroupClasses = ['col_g_left', 'col_g_center', 'col_g_right']
