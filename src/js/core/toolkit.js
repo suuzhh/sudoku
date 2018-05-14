@@ -25,31 +25,40 @@ const matrixToolkit = {
             const j = i + Math.floor(Math.random() * (array.length - i));
     
             [array[i], array[j]] = [array[j], array[i]]
-            console.log(array)
         }
         return array
     },
 
     /**
-     * TODO: 检查指定位置可以填写数字
+     * 检查指定位置可以填写数字
      */
     checkFillable(matrix, n, rowIndex, colIndex) {
         const row = matrix[rowIndex]
         const column = this.makeRow().map((v, i) => matrix[i][colIndex])
+        // 获取宫下标
         const { boxIndex } = boxToolkit.convertToBoxIndex(rowIndex, colIndex)
+        // 宫数组
         const box = boxToolkit.getBoxCells(matrix, boxIndex)
-        // TODO: 检测宫内数据
-
-
+        
+        for (let i = 0; i < 9; i++) {
+            if (row[i] === n
+            || column[i] === n
+            || box[i] === n)
+            return false
+        }
         return true
     }
-
 }
 
 /**
  * 宫坐标系工具
  */
 const boxToolkit = {
+    /**
+     * 获取指定宫的所有元素
+     * @param {*} matrix 整个矩阵
+     * @param {*} boxIndex 宫的下标
+     */
     getBoxCells(matrix, boxIndex) {
         const startRowIndex = Math.floor(boxIndex / 3) * 3
         const startColIndex = boxIndex % 3 * 3
@@ -59,6 +68,7 @@ const boxToolkit = {
             const colIndex = startColIndex + cellIndex % 3
             result.push(matrix[rowIndex][colIndex])
         }
+        
         return result
     },
 

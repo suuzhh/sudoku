@@ -3,26 +3,39 @@ import Toolkit from './toolkit'
 
 class Generator {
     generate() {
+        while (!this.internalGenerate()) {
+            console.warn("try again")
+        }
+    }
+
+    internalGenerate() {
         // 生成矩阵
         this.matrix = Toolkit.matrix.makeMatrix()
         // 生成随机矩阵
         this.orders = Toolkit.matrix.makeMatrix()
-            .map(row => row.map(((v, i) => i)))
+            .map(row => row.map((v, i) => i))
             .map(row => Toolkit.matrix.shuffle(row))
 
         for (let n = 1; n <= 9; n++) {
-            this.fillNumber(n)
+            if (!this.fillNumber(n)) {
+                return false
+            }
         }
+        return true
     }
 
+    /**
+     * 往矩阵填充数字
+     * @param {*} n 所要填充的数字
+     */
     fillNumber(n) {
-        this.fillRow(n, 0)
+        return this.fillRow(n, 0)
     }
 
     /**
      * 填充 宫
      * @param {*} n 需要填充的数字
-     * @param {*} rowIndex 所在的宫
+     * @param {*} rowIndex 所在的行
      */
     fillRow(n, rowIndex) {
         if (rowIndex > 8) {
@@ -57,3 +70,6 @@ class Generator {
 
     }
 }
+
+
+export default Generator
