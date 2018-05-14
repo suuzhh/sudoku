@@ -130,6 +130,8 @@ body {
 .popup-num {
     @extend .container;
 
+    position: absolute;
+    padding: 0;
     .row {
         > span {
             width: $popupCellSize;
