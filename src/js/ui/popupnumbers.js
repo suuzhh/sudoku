@@ -16,7 +16,7 @@ export default class PopupNumbers {
                     $cell.removeClass('mark2')
                         .addClass('mark1')
                 }
-                return
+                
             } else if ($span.hasClass('mark2')) {
                 if ($cell.hasClass('mark2')) {
                     $cell.removeClass('mark2')
@@ -24,11 +24,11 @@ export default class PopupNumbers {
                     $cell.removeClass('mark1')
                         .addClass('mark2')
                 }
-                return
+                
             } else if ($span.hasClass('empty')) {
                 $cell.text(0)
                     .addClass('empty')
-                return
+                
             } else {
                 // 回填数字
                 $cell.text($span.text())
