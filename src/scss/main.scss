@@ -1,6 +1,8 @@
 $shadowBottom: 0 0.2rem 0.3rem rgba(48, 48, 48, 192);
 $shadowTop: 0 -0.1rem 0.2rem rgba(48,48,48,192);
 
+$popupCellSize: 40px;
+
 html {
     font-size: 14px;
 }
@@ -65,6 +67,14 @@ body {
             &.fixed {
                 background: #eee;
             }
+
+            &.mark1 {
+                background: lightpink;
+            }
+
+            &.mark2 {
+                background: lightgreen;
+            }
         }
 
         &.row_g_bottom {
@@ -113,6 +123,18 @@ body {
         border-right-width: 0;
         &:last-child {
             border-right-width: 1px;
+        }
+    }
+}
+
+.popup-num {
+    @extend .container;
+
+    .row {
+        > span {
+            width: $popupCellSize;
+            height: $popupCellSize;
+            line-height: $popupCellSize;
         }
     }
 }
