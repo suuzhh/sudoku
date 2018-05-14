@@ -15,7 +15,7 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "program": "${workspaceFolder}\\src\\index.js"
+            "program": "${workspaceFolder}\\src\\index2.js"
         }
     ]
 }
